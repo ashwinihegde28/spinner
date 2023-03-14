@@ -1,4 +1,4 @@
-/*process.stdout.write('hello from spinner1.js... \rheyyy\n');
+process.stdout.write('hello from spinner1.js... \rheyyy\n');
 
 
 setTimeout(() => {
@@ -16,15 +16,22 @@ setTimeout(() => {
 setTimeout(() => {
   // Need to escape the backslash since it's a special character.
   process.stdout.write('\r\\   '); 
-}, 700);*/
+}, 700);
 
-const spinChar = ['\r|   ' , '\r/   ' , '\r-   ' , '\r\\   '];
-let delay = 100;
-for(let i = 0 ; i < 5 ; i++){
-    for (let char of spinChar) {
-        setTimeout(( ) => {
-        process.stdout.write(char);
-        },delay);
-        delay += 200;
-    }
-}
+setTimeout(() => {
+  process.stdout.write('\r|   ');
+}, 1000);
+
+setTimeout(() => {
+  process.stdout.write('\r/   ');
+}, 1300);
+
+setTimeout(() => {
+  process.stdout.write('\r-   ');
+}, 1600);
+
+setTimeout(() => {
+  // Need to escape the backslash since it's a special character.
+  process.stdout.write('\r\\   '); 
+}, 1900);
+
